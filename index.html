@@ -1,4 +1,4 @@
-hjhtml>
+<html>
 <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100' rel='stylesheet' type='text/css'>
 <style>
   html {
@@ -202,10 +202,10 @@ hjhtml>
 
 
     var xRot = 0;
-    var xSpeed = 0;
+    var xSpeed = 2.2; 
 
     var yRot = 0;
-    var ySpeed = 0;
+    var ySpeed = 3.3;
 
     var z = -5.0;
 
@@ -375,8 +375,8 @@ hjhtml>
 
         mat4.translate(mvMatrix, [0.0, 0.0, z]);
 
-        mat4.rotate(mvMatrix, degToRad(xRot), [1, 0, 0]);
-        mat4.rotate(mvMatrix, degToRad(yRot), [0, 1, 0]);
+        mat4.rotate(mvMatrix, degToRad(xRot), [1, 2, 3]);
+        mat4.rotate(mvMatrix, degToRad(yRot), [4, 5, 6]);
 
         gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexPositionBuffer);
         gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, cubeVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
