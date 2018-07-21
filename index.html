@@ -37,8 +37,9 @@
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 
 <script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
+<script type="text/javascript" src="hammer.js"></script>
 <script type="text/javascript" src="webgl-utils.js"></script>
-
+<script type="text/javascript" src="jquery-3.3.1.slim.min.js"></script>
 <script id="shader-fs" type="x-shader/x-fragment">
     precision mediump float;
 
@@ -69,7 +70,6 @@
 
 
 <script type="text/javascript">
-
     var gl;
 
     function initGL(canvas) {
@@ -278,6 +278,9 @@
     }
 
 
+
+
+
     var cubeVertexPositionBuffer;
     var cubeVertexTextureCoordBuffer;
     var cubeVertexIndexBuffer;
@@ -453,13 +456,14 @@
         tick();
     }
 
+
 </script>
 
 
 </head>
 
 
-<body onload="webGLStart();">
+<body onload="webGLStart();" id="trataka">
   <div class="wrapper">
     <div class="container">
       <div class="canvas-container">
@@ -471,6 +475,49 @@
     <audio loop="loop" autoplay="autoplay">
       <source src="theredwing.mp3"/>
     </audio>
+    <script>
+      var bodyElement = document.getElementById('trataka');
+   
+      var mc = new Hammer(bodyElement);
+
+      mc.on("panup", function(ev) {
+        console.log(ev.type +" gesture detected.");
+        $('canvas').trigger(jQuery.Event('keydown', {which: 38, keyCode: 38}));
+        setTimeout(function() {
+          $('canvas').trigger(jQuery.Event('keyup', {which: 38, keyCode: 38}));
+
+        }, 2000);
+      });
+
+      mc.on("pandown", function(ev) {
+        console.log(ev.type +" gesture detected.");
+        $('canvas').trigger(jQuery.Event('keydown', {which: 40, keyCode: 40}));
+        setTimeout(function() {
+          $('canvas').trigger(jQuery.Event('keyup', {which: 40, keyCode: 40}));
+
+        }, 2000);
+
+      });
+
+      mc.on("panleft", function(ev) {
+        console.log(ev.type +" gesture detected.");
+        $('canvas').trigger(jQuery.Event('keydown', {which: 37, keyCode: 37}));
+        setTimeout(function() {
+          $('canvas').trigger(jQuery.Event('keyup', {which: 37, keyCode: 37}));
+
+        }, 2000);
+      });
+
+      mc.on("panright", function(ev) {
+        console.log(ev.type +" gesture detected.");
+        $('canvas').trigger(jQuery.Event('keydown', {which: 39, keyCode: 39}));
+        setTimeout(function() {
+          $('canvas').trigger(jQuery.Event('keyup', {which: 39, keyCode: 39}));
+
+        }, 2000);
+      });
+    </script>
+
 </body>
 
 </html>
