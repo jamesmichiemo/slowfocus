@@ -480,7 +480,7 @@
    
       var mc = new Hammer(bodyElement);
 
-      mc.on("panup", function(ev) {
+      mc.on("swipeup", function(ev) {
         console.log(ev.type +" gesture detected.");
         $('canvas').trigger(jQuery.Event('keydown', {which: 38, keyCode: 38}));
         setTimeout(function() {
@@ -489,7 +489,7 @@
         }, 2000);
       });
 
-      mc.on("pandown", function(ev) {
+      mc.on("swipedown", function(ev) {
         console.log(ev.type +" gesture detected.");
         $('canvas').trigger(jQuery.Event('keydown', {which: 40, keyCode: 40}));
         setTimeout(function() {
@@ -499,7 +499,7 @@
 
       });
 
-      mc.on("panleft", function(ev) {
+      mc.on("swipeleft", function(ev) {
         console.log(ev.type +" gesture detected.");
         $('canvas').trigger(jQuery.Event('keydown', {which: 37, keyCode: 37}));
         setTimeout(function() {
@@ -508,7 +508,7 @@
         }, 2000);
       });
 
-      mc.on("panright", function(ev) {
+      mc.on("swiperight", function(ev) {
         console.log(ev.type +" gesture detected.");
         $('canvas').trigger(jQuery.Event('keydown', {which: 39, keyCode: 39}));
         setTimeout(function() {
