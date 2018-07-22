@@ -1,5 +1,4 @@
 <html>
-<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100' rel='stylesheet' type='text/css'>
 <style>
   html {
     background-color: black;
@@ -36,10 +35,10 @@
 <title>#slowfocus</title>
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 
-<script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
-<script type="text/javascript" src="hammer.js"></script>
-<script type="text/javascript" src="webgl-utils.js"></script>
-<script type="text/javascript" src="jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="./lib/glMatrix-0.9.5.min.js"></script>
+<script type="text/javascript" src="./lib/hammer.js"></script>
+<script type="text/javascript" src="./lib/webgl-utils.js"></script>
+<script type="text/javascript" src="./lib/jquery-3.3.1.slim.min.js"></script>
 <script id="shader-fs" type="x-shader/x-fragment">
     precision mediump float;
 
@@ -187,7 +186,7 @@
         goldImage.onload = function () {
             handleLoadedTexture(goldTextures)
         }
-        goldImage.src = "iluvgooldd.gif";
+        goldImage.src = "./assets/iluvgooldd.gif";
     }
 
 
@@ -473,7 +472,7 @@
   </div>
 
     <audio loop="loop" autoplay="autoplay">
-      <source src="theredwing.mp3"/>
+      <source src="./assets/theredwing.mp3"/>
     </audio>
     <script>
       var bodyElement = document.getElementById('trataka');
