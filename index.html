@@ -479,6 +479,8 @@
       var bodyElement = document.getElementById('trataka');
    
       var mc = new Hammer(bodyElement);
+   
+      mc.get('swipe').set({direction: Hammer.DIRECTION_ALL});
 
       mc.on("swipeup", function(ev) {
         console.log(ev.type +" gesture detected.");
